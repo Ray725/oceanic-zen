@@ -28,14 +28,6 @@
                     <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
                       <ul>
                         {% set index = get_section(path="_index.md") %}
-                        {% for s in index.subsections %}
-                            {% set subsection = get_section(path=s) %}
-                            <li class="nav">
-                                <a itemprop="url" href="{{ subsection.permalink | safe}}">
-                                    <span itemprop="name">{{ subsection.title }}</span>
-                                </a>
-                            </li>
-                        {% endfor %}
                         {% if config.extra.github %}
                         <li class="nav">
                             <a itemprop="url" href="https://github.com/{{ config.extra.github }}">
@@ -89,11 +81,9 @@
             {% block footer %}
             <div class="border"></div>
             <div class="footer">
-                <small class="footer-left">
-                    Copyright &copy; {{ config.extra.author }}
-                </small>
+                <small class="footer-left"></small>
                 <small class="footer-right">
-                    Powered by <a href="https://www.getzola.org">Zola</a> | Theme <a href="https://github.com/barlog-m/oceanic-zen">Oceanic Zen</a>
+                    John Boyd: "...a basic aim or goal, as individuals, is to improve our capacity for independent action."
                 </small>
             </div>
         {% endblock footer %}
